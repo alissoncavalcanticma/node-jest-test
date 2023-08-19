@@ -1,40 +1,28 @@
 # Registry of node-passport project
 
-###### Obs: Copy node project base of node_base_api from suporteb7web/node_base_api
-##### Foi usado o site abaixo para ...:
+###### Obs: Copy node project base of node_base_api_b7web
 
-> 
-
-####  Para ...:
-
-  - Instalando a lib passport
-    `npm i passport`
-
-      - Instalando suporte ao typescript para a lib:
-        `npm i -D @types/passport`
-
-  - Instalando a lib passport-http
-    `npm i passport-http`
+  - Instalando a lib jest
+    `npm i -D jest`
 
       - Instalando suporte ao typescript para a lib
-        `npm i -D @types/passport-http`
+        `npm i -D @types/jest`
 
-  - Instalando a lib passport-jwt
-    `npm i passport-jwt`
+  - Instalando a lib ts-jest, para auxilio do jest
+    `npm i -D ts-jest`
 
-      - Instalando suporte ao typescript para a lib
-        `npm i -D @types/passport-jwt`
-
-  - Instalando a lib jsonwebtoken (Para geração do token no login)
-    `npm i jsonwebtoken`
-
-      - Instalando suporte ao typescript para a lib
-        `npm i -D @types/jsonwebtoken`
-
+  
 ####Instruções:
 
- - Importar lib no server
- - Inicializar ele antes da definição das rotas com:
-  `server.use(passport.initialize());`
- - Criar pasta no path src com nome 'config' para fazer a configuração do passport
- - Criar arquivo passport.ts, onde irá conter toda a configuração do passport 
+#####Criar arquivo de config do Jest:
+`npx ts-jest config:init`
+
+#####Criar script de teste no package.json:
+```json
+"scripts": {
+      "test": "set NODE_ENV=test& jest --runInBand", //set env NODE_ENV e define o jest para executar sequencia de testes
+      "start-dev": "nodemon -e ts,json src/server.ts"
+}
+```
+#####Executar testes com o comando:
+`npm run test`
